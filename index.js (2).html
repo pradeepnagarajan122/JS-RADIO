@@ -1,0 +1,49 @@
+<html>
+<body>
+<input type="text" placeholder="Enter first Name" id="input_name"> <br>
+<input type="number" placeholder="Enter Age" id="input_age"> <br>
+<input type="tel" placeholder="Mobile Number" id="input_mobile_number"> <br>
+<input type="text" placeholder="email" id="input_email"> <br>
+<input type="radio" name="gender" value="Male">Male
+<input type="radio" name="gender" value="Female">Female
+<input type="radio" name="gender" value="other">other
+<button id="btn">Add</button>
+<br><br><br>
+<table border="1" id="tab">
+<tr><td>Name</td><td>Age</td><td>Mobile No</td><td>Email</td><td>Gender</td></tr>
+</table>
+
+<script>
+btn.addEventListener("click",function () {
+
+   var input_name=document.getElementById("input_name").value;
+   var input_age=document.getElementById("input_age").value;
+   var input_email=document.getElementById("input_email").value
+   var input_mobile_number=document.getElementById("input_mobile_number").value
+   var gender_elements=document.getElementsByName("gender");
+
+   let gender="";
+   
+   if(gender_elements[0].checked)
+   {
+    gender=(gender_elements[0].value)
+
+   }else if(gender_elements[1].checked)
+   {
+    gender=(gender_elements[1].value)
+   
+   }
+   else if(gender_elements[2].checked)
+   {
+    gender=(gender_elements[2].value)
+   
+   }
+
+var new_row=document.createElement("tr");
+
+new_row.innerHTML="<td>"+input_name+"</td><td>"+input_age+"</td><td>"+input_email+"</td><td>"+input_mobile_number+"</td><td>"+gender+"</td<td>"
+document.getElementById("tab").append(new_row);
+})
+</script>
+</body>
+</html>
